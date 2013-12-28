@@ -1,0 +1,12 @@
+#
+# Core configuration
+#
+
+menu "Core Configurations"
+
+config CORE_EMPTY
+	bool "Import empty file for skeleton build"
+	depends on SKELETON_BUILD
+	default y
+
+endmenu

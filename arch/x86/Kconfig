@@ -1,0 +1,9 @@
+
+config SKELETON_BUILD
+	bool "Skeleton build for test"
+	default n
+
+source "core/Kconfig"
+
+source "lib/Kconfig"
+

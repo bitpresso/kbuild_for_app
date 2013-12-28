@@ -1,0 +1,12 @@
+#
+# Library configuration
+#
+
+menu "Library routines"
+
+config LIB_DUMMY
+	bool "Import dummy file for skeleton build"
+	depends on SKELETON_BUILD
+	default y
+
+endmenu
