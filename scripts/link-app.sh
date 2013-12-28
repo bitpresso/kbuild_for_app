@@ -69,8 +69,8 @@ cleanup()
 	rm -f .tmp_version
 	rm -f .tmp_app*
 	rm -f System.map
-	rm -f app
-	rm -f app.o
+	rm -f ${KBUILD_IMAGE}
+	rm -f ${KBUILD_IMAGE}.o
 }
 
 #
@@ -153,16 +153,16 @@ if [ -n "${CONFIG_KALLSYMS}" ]; then
 	fi
 fi
 
-info LD app
-app_link "${kallsymso}" app
+info LD ${KBUILD_IMAGE}
+app_link "${kallsymso}" ${KBUILD_IMAGE}
 
 if [ -n "${CONFIG_BUILDTIME_EXTABLE_SORT}" ]; then
-	info SORTEX app
-	sortextable app
+	info SORTEX ${KBUILD_IMAGE}
+	sortextable ${KBUILD_IMAGE}
 fi
 
 info SYSMAP System.map
-mksysmap app System.map
+mksysmap ${KBUILD_IMAGE} System.map
 
 # step a (see comment above)
 if [ -n "${CONFIG_KALLSYMS}" ]; then
